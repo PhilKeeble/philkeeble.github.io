@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "default" "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-GB"
-title                    : "Phils Hacks / Research"
+title                    : "Offensive Research"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Phil Keeble"
@@ -276,7 +276,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
 defaults:
