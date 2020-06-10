@@ -28,8 +28,6 @@ en: &DEFAULT_EN
   more_label                 : "Learn more"
   related_label              : "You may also enjoy"
   follow_label               : "Follow:"
-  feed_label                 : "Feed"
-  powered_by                 : "Powered by"
   website_label              : "Website"
   email_label                : "Email"
   recent_posts               : "Recent posts"
