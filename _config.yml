@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Phil Keeble"
-  avatar           : "/assets/images/Bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/Bio.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Professional Red Teamer / Pentester"
   location         : "London"
   email            :
