@@ -115,6 +115,9 @@ author:
 # Site Footer
 footer:
   links:
+    - label: "Cheat Sheets"
+      icon: "fas fa-fw fa-link"
+      url: "https://cheats.philkeeble.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://uk.linkedin.com/in/phil-keeble-497711191"
