@@ -1,16 +1,6 @@
 ---
-layout: archive
-author_profile: true 
-title: Categories
+title: "Posts by Category"
+layout: categories
 permalink: /categories/
+author_profile: true
 ---
-
-{% for i in (1..categories_max) reversed %}
-  {% for category in site.categories %}
-    {% if category[1].size == i %}
-          {% for post in category.last %}
-            {% include archive-single.html type=page.entries_layout %}
-          {% endfor %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
