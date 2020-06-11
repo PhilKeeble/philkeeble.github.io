@@ -102,15 +102,15 @@ author:
     - label: "Cheat Sheets"
       icon: "fas fa-fw fa-link"
       url: "https://cheats.philkeeble.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: https://twitter.com/The_Keeb
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://uk.linkedin.com/in/phil-keeble-497711191"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: https://twitter.com/The_Keeb
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/philkeeble"
+      url: # "https://github.com/philkeeble"
 
 # Site Footer
 footer:
