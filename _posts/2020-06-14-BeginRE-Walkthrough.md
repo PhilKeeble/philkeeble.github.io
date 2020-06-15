@@ -385,7 +385,6 @@ Note that the lowest address we can get here (after summing up base + offset) is
 
 ​
 0x80 in hex is 0b10000000 in binary. As you can tell, the only set bit is the 8th least-significant bit (if you count bits from right to left, the eighth is the only one set).
-
 ​
 * Take every number with this bit set. ANDing it with 0x80 will result in the number 0x80.
 * Take every number with this bit unset. ANDing it with 0x80 will result in 0x0 (zero).
