@@ -64,7 +64,7 @@ We can also test entering it into the executable to ensure we are correct.
 
 <p align="center"><a href="/images/begin.re-13.png"><img src="/images/begin.re-13.png"></a></p>
 
-<h1>Challenge 2 - Good_luck </h2>
+<h1>Challenge 2 - Good_luck</h2>
 
 This challenge is harder than the first. We will start by opening it in Ghidra. We will then find the strings, same as before, to look for values that may be printed to terminal. 
 
