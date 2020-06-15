@@ -373,7 +373,7 @@ Next, another value is pushed onto the stack and rand_caller is once again calle
 We finish with:
 * 0 < ESI < DAT_1005334 + 1
 * 31 < ECX < (DAT_1005338 ) * 32 + 1
-Make sure you understand why :)
+
 ​
 Then, the sum of these two values is used as an offset of some memory location DAT_1005340. Whatever byte is in the resulting address is tested against 0x80.
 ​
@@ -386,6 +386,7 @@ Note that the lowest address we can get here (after summing up base + offset) is
 * Take every number with this bit set. ANDing it with 0x80 will result in the number 0x80.
 * Take every number with this bit unset. ANDing it with 0x80 will result in 0x0 (zero).
  
+
 In other words, testing against 0x80 checks whether the eighth LSB is set or not.
 ​
 If the resulted value is not zero (meaning, the relevant bit was set), we go back and run this same block - the one which calls rand_caller twice. Otherwise, we proceed to the next block.
@@ -396,6 +397,7 @@ In this next block, we do the following:
 * Then, we OR EAX with the value 0x80, which is a synonym to setting the 8th LSB in EAX.
 * We decrease some loop variable (DAT_1005330) by 1 and continue.
 ​
+
 All in all, it looks like the following:
 We randomize two values and then reference a single byte in memory using the sum of these values as an offset (you can think of it as fetching an element from an array using an index). If some specific bit is set in the fetched byte - we go and randomize an offset all over again. If the bit is not set - we set it and continue with the loop.
 ​
@@ -429,10 +431,12 @@ The line setting the mine was `010036fa 80 08 80  OR byte ptr [EAX],0x80`, this 
 * With Mine: 0x0F to 0x8F, or 0b00001111 to 0b10001111.
 * With Flag: 0x0F to 0x8E, or 0b00001111 to 0b10001110.
  
+
 So basically we need to do two things:
 * Set the 8th LSB (the left hand bit (0x0))
 * Unset the 1st LSB (the right hand bit (0x00000001))
 ​
+
 I tend to go with XOR here, look:
 0x0F XOR 0x81 == 0b00001111 XOR 0b10000001 == 10001110 == 0x8E 
 ​
