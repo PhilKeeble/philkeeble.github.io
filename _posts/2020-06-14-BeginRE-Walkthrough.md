@@ -376,12 +376,16 @@ We finish with:
 
 ​
 Then, the sum of these two values is used as an offset of some memory location DAT_1005340. Whatever byte is in the resulting address is tested against 0x80.
+
 ​
 Note that the lowest address we can get here (after summing up base + offset) is 0x1005340 + 31.
+
 ​
 **What's the meaning of testing a value against 0x80?**
+
 ​
 0x80 in hex is 0b10000000 in binary. As you can tell, the only set bit is the 8th least-significant bit (if you count bits from right to left, the eighth is the only one set).
+
 ​
 * Take every number with this bit set. ANDing it with 0x80 will result in the number 0x80.
 * Take every number with this bit unset. ANDing it with 0x80 will result in 0x0 (zero).
@@ -400,13 +404,17 @@ In this next block, we do the following:
 
 All in all, it looks like the following:
 We randomize two values and then reference a single byte in memory using the sum of these values as an offset (you can think of it as fetching an element from an array using an index). If some specific bit is set in the fetched byte - we go and randomize an offset all over again. If the bit is not set - we set it and continue with the loop.
+
 ​
 This logic smells like random positioning of mines: say the 8th LSB marks a mine.
 If we randomize a location where this bit is already set (namely, a mine is already present) - we try finding another proper location. Otherwise - if there is no mine on the square - we set a mine.
+
 ​
 Now that the loop is understood, we move on to dynamic analysis. Keep in mine the memory location of where rand is happening (DAT_1005340), as mines will be placed somewhere near here. In the tutorial they use OllyDbg, but we are using a more modern version for this, so I used x32dbg (which is a 32 bit plugin for x64dbg). This is more actively maintained and runs on modern systems. 
 
+
 Load the binary in x32dbg, then press F9. This will take you to the main function usually. Then you will need to scroll up and look for 010036c7. In Ghidra we can see this is where the loop starts. Find that address, click on it and press F2. This will put a breakpoint there. Now hit F9 again and it will execute and hit the breakpoint. Now we have the execution stopped just before mines are assigned. You can click through each instruction at a time with F8 and see what changes as it loops and then hit F9 if you want to see the executable run and spawn minesweeper. If you do that hit the restart button and F9 then F9 again and you will be just before the loop again. 
+
 
 From the analysis of the loop we know that 0x1005340 is used in memory to calculate the offset from, this means that this is the start of the grid (or close to). In x32dbg right click on 1005240, then click follow in dump > constant, as below:
 
@@ -437,7 +445,7 @@ So basically we need to do two things:
 * Unset the 1st LSB (the right hand bit (0x00000001))
 ​
 
-I tend to go with XOR here, look:
+Lets go with XOR here, look:
 0x0F XOR 0x81 == 0b00001111 XOR 0b10000001 == 10001110 == 0x8E 
 ​
 So double click on the OR instruction and this should bring up a popup. Change the OR to XOR and the 0x80 to 0x81 and we will change 8F to 8E!
