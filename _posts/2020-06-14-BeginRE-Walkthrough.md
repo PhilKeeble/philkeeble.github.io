@@ -20,11 +20,11 @@ The first challenge was a simple windows binary that when executed asked for a p
 
 The first time you launch Ghidra it can be a bit confusing (or was for me anyway). Go into File > New project and create a project with whatever name you want, I used begin.re for ease. Then with the project folder in the screen you need to use File > Import File and choose the executable you want to analyse. You could also download all the binaries at once, put them in a folder, then use File > Batch Import and select the folder to import all the binaries at once. 
 
-Hopefully you should see a screen similar to the below now but without the patched minesweeper included as that is my hacked version produced through this course.
+Hopefully you should see a screen similar to the below.
 
 <p align="center"><a href="/images/begin.re-2.png"><img src="/images/begin.re-2.png"></a></p>
 
-Now double click on the password executable and the code browser will be opened. 
+Now double click on the password executable and the code browser will be opened. It will ask you if you want to analyse the sample.
 
 <p align="center"><a href="/images/begin.re-3.png"><img src="/images/begin.re-3.png"></a></p>
 
@@ -32,7 +32,7 @@ I don't really know what this does but I selected yes and went with the defaults
 
 <p align="center"><a href="/images/begin.re-4.png"><img src="/images/begin.re-4.png"></a></p>
 
-I don't really know what this does but I selected yes and went with the defaults and waited. It did come back with an error but seemed to have completed execution ok. This doesn't run the sample, I assume it just tries to pick out relevant information. 
+It did come back with an error but seemed to have completed execution ok. This doesn't run the sample, I assume it just tries to pick out relevant information. 
 
 <p align="center"><a href="/images/begin.re-5.png"><img src="/images/begin.re-5.png"></a></p>
 
@@ -50,7 +50,7 @@ We can see in the strings that there is an interesting string "cr4ckm3" which se
 
 <p align="center"><a href="/images/begin.re-9.png"><img src="/images/begin.re-9.png"></a></p>
 
-By right clicking on the memory pointer we can select References > See all references to see where it's called.
+By right clicking on the memory pointer we can select `References > Show References to` to see where it's called.
 
 <p align="center"><a href="/images/begin.re-10.png"><img src="/images/begin.re-10.png"></a></p>
 
@@ -405,8 +405,7 @@ All in all, it looks like the following:
 We randomize two values and then reference a single byte in memory using the sum of these values as an offset (you can think of it as fetching an element from an array using an index). If some specific bit is set in the fetched byte - we go and randomize an offset all over again. If the bit is not set - we set it and continue with the loop.
 
 ​
-This logic smells like random positioning of mines: say the 8th LSB marks a mine.
-If we randomize a location where this bit is already set (namely, a mine is already present) - we try finding another proper location. Otherwise - if there is no mine on the square - we set a mine.
+This logic seems like random positioning of mines where the 8th LSB marks a mine. If we randomize a location where this bit is already set (a mine is already present) - we try finding another proper location. Otherwise - if there is no mine on the square - we set a mine.
 
 ​
 Now that the loop is understood, we move on to dynamic analysis. Keep in mine the memory location of where rand is happening (DAT_1005340), as mines will be placed somewhere near here. In the tutorial they use OllyDbg, but we are using a more modern version for this, so I used x32dbg (which is a 32 bit plugin for x64dbg). This is more actively maintained and runs on modern systems. 
