@@ -64,7 +64,7 @@ We can also test entering it into the executable to ensure we are correct.
 
 <p align="center"><a href="/images/begin.re-13.png"><img src="/images/begin.re-13.png"></a></p>
 
-<h1>Challenge 2 - Good_luck</h2>
+<h1>Challenge 2 - Good_luck</h1>
 
 This challenge is harder than the first. We will start by opening it in Ghidra. We will then find the strings, same as before, to look for values that may be printed to terminal. 
 
@@ -125,7 +125,7 @@ So `5 x EAX = 0x181a`, which means `EAX = 0x181a / 5`. Using a hex calculator, `
 
 <p align="center"><a href="/images/begin.re-17.png"><img src="/images/begin.re-17.png"></a></p>
 
-<h1>Challenge 3 - Julia</h3>
+<h1>Challenge 3 - Julia</h1>
 
 This challenge starts the same as the others. You can run the executable and see what is shown, then load into Ghidra. Analyse, then search for strings. You will see some interesting strings near the bottom.
 
