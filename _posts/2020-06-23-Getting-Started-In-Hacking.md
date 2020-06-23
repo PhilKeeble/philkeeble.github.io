@@ -16,9 +16,9 @@ At the bottom of this post I have put links for all the resources mentioned here
 
 I won't go into too much depth here, but I want to give you an idea of where I was and how I moved into cyber security. 
 
-Being a pentester is the first job I got out of University. At University I got my degree in Forensic Science, which was mostly chemistry, and then got my Masters in Forensic Chemistry. This involved nothing to do with hacking and did not contribute to my job. During my time at Uni, I spent many evenings and weekends suffering in hacking labs at home. I did various courses online and I even got my CEH qualification (which I regret very much, I do not recommend it at all! Way better to spend your money on other courses mentioned below). I also set up a blog to detail things I exploited, walkthroughs for challenges etc. It was all basic but useful. I spent a lot of time watching talks from DefCon and other conferences to learn more about the world of hacking and I spent a lot of time playing around with Vulnerable Virtual Machines on my own laptop. I also followed lots and lots of walkthroughs and also had a VIP HackTheBox membership so I could do retired machines with walkthroughs which helped a lot! 
+Being a pentester is the first job I got out of University. At University I got my degree in Forensic Science, which was mostly chemistry, and then got my Masters in Forensic Chemistry. This involved nothing to do with hacking and did not contribute to my job. During my time at Uni, I spent many evenings and weekends suffering in hacking labs at home. I did various courses online and I even got my CEH qualification (which I regret very much, I do not recommend it at all! Way better to spend your money on other courses mentioned later in the post). I also set up a blog to detail things I exploited, walkthroughs for challenges etc. It was all basic but useful. I spent a lot of time watching talks from DefCon and other conferences to learn more about the world of hacking and I spent a lot of time playing around with Vulnerable Virtual Machines on my own laptop. I also followed lots and lots of walkthroughs and had a VIP HackTheBox membership so I could do retired machines with walkthroughs which helped a lot! 
 
-All the time spent was frustrating and confusing, but I remained curious and persistent, and after uni I managed to get a job as a junior Security Consultant and it was a set career from then onwards! I didn't know how to code, I had no formal training, I had no previous experience, I had no-one coaching me, I had no CVEs at the time etc. I hope this lets you know that it is possible, despite what some people and elitist pentesters may say! 
+All the time spent was frustrating and confusing, but I remained curious and persistent, and after uni I managed to get a job as a junior Security Consultant and it was a set career from then onwards! I didn't know how to code, I had no formal training, I had no previous experience, I had no-one coaching me, I had no CVEs at the time etc. I hope this lets you know that it is possible, despite what some people (including pentesters) may say! 
 
 <h1>Myth Busting</h1>
 
@@ -45,7 +45,7 @@ Now that kali is installed, you need to learn the basics of using a Linux OS. To
 This wargame will teach you various Linux utilities and tricks. Follow a walkthrough like the one below for all the levels: 
 <a href="https://jhalon.github.io/over-the-wire-bandit1/">https://jhalon.github.io/over-the-wire-bandit1/</a>
 
-I highly recommend keeping your own private GitBook (gitbook.com) to store notes of all the commands you learn and a little sentence about what they do. This will be invaluable later on as you will need to come back and reference things that you have forgotten. 
+I highly recommend keeping your own private GitBook (<a href="https://gitbook.com">gitbook.com</a>) to store notes of all the commands you learn and a little sentence about what they do. This will be invaluable later on as you will need to come back and reference things that you have forgotten. 
 
 <h1>The Fun Stuff</h1>
 
@@ -90,20 +90,20 @@ When learning Infrastructure hacking, it can be hard to find good resources. Ess
 
 You should know the basics as you have installed Kali Linux. Downloading Vulnerable VMs is similar, however most will just be a case of downloaded and booting. Note: when doing this you should put your Kali and the target machine either in its own network, or both on Bridged Mode (In the networking settings of whatever virtualisation software you are using). 
 
-I recommend starting with <a href="https://metasploit.help.rapid7.com/docs/metasploitable-2">https://metasploit.help.rapid7.com/docs/metasploitable-2</a> as the first target machine. This machine is made to show a bunch of different attack paths using Metasploit, which is a hacking framework that can be used to automate lots of tasks. I would recommend also learning how to exploit things manually, as you won't be able to rely on Metasploit as a pentester a lot of the time, but its a fine starting point. 
+I recommend starting with <a href="https://metasploit.help.rapid7.com/docs/metasploitable-2">https://metasploit.help.rapid7.com/docs/metasploitable-2</a> as the first target machine. This machine is made to show a bunch of different attack paths using Metasploit, which is a hacking framework that can be used to automate lots of tasks. I would recommend also learning how to exploit things manually, as you won't be able to rely on Metasploit as a pentester a lot of the time, but it's a fine starting point. 
 
 There are several walkthroughs on different ways you can own Metasploitable 2 so I would follow those. Essentially everything on there is vulnerable to something and you should see how many different paths you can find onto the system. 
 
 It also hosts some vulnerable web applications on port 80 which you can hack and practise your web application skills against. 
 
-After you have done Metasploitable, there are a whole host of other machines to try. There is <a href="https://blog.rapid7.com/2016/11/15/test-your-might-with-the-shiny-new-metasploitable3/">Metasploitable 3</a>, which is a Windows machine. There is also all the machines on:
+After you have done Metasploitable, there are a whole host of other machines to try. There is <a href="https://blog.rapid7.com/2016/11/15/test-your-might-with-the-shiny-new-metasploitable3/">Metasploitable 3</a>, which is a Windows machine. There are also all the machines on:
 <a href="http://vulnhub.com/">http://vulnhub.com/</a>
 
 Vulnhub is great for downloading and hacking VMs (called boot to roots typically). The goal is to get onto the target and then to gain administrative or root privileges on it. Usually this is proven by reading a file like `/root/flag.txt` for Linux or `C:\Users\Administrator\Desktop\flag.txt` for Windows. 
 
 Once you have done a selection of these, I recommend trying out some rooms on <a href="https://tryhackme.com/">https://tryhackme.com/</a>. This is a relatively new website on the scene, but for free you can try a bunch of rooms and learn a bunch of community uploaded stuff which is helpful.
 
-If you really want a challenge then try <a href="https://www.hackthebox.eu">https://www.hackthebox.eu</a> (Note: the signup page is in itself a challenge, so if you are new and curious, you may need to look for a walkthrough. Hopefully you have done the above and have no issues with it! &#x1F609;) This is the best for vulnerable VMs in my opinion, however be warned, the active machines will be hard!! Generally for beginners I say to only do HackTheBox if you can first get the VIP membership. Get the VIP Membership for a year and then just work through all the retired machines and follow the videos for all of them made by Ippsec. By the time you have done all the retired machines you will have a great understanding of how it works and you will be in a great place to start doing active machines. 
+If you really want a challenge then try <a href="https://www.hackthebox.eu">https://www.hackthebox.eu</a> (Note: the signup page is in itself a challenge, so if you are new and curious, you may need to look for a walkthrough. Hopefully you have done the above and have no issues with it! &#x1F609;) This is the best for vulnerable VMs in my opinion, however be warned, the active machines will be hard!! Generally for beginners I say to only do HackTheBox if you can first get the VIP membership. Get the VIP Membership for a year and then just work through all the retired machines and follow the videos for all of them made by Ippsec on YouTube. By the time you have done all the retired machines you will have a great understanding of how it works and you will be in a great place to start doing active machines. 
 
 <h2>Cloud Security</h2>
 
@@ -117,7 +117,7 @@ Again I recommend following walkthroughs and taking notes.
 
 <h1>Courses</h1>
 
-So now if you have done all the above, you should be have a pretty good grasp on the basics across the board for the general skills needed as a junior pentester. However, what you wont have is the fundamental knowledge of computers and networking. 
+So now if you have done all the above, you should be have a pretty good grasp on the basics across the board for the general skills needed as a junior pentester. However, what you won't have is the fundamental knowledge of computers and networking. 
 
 For understanding the fundamentals (and showing it on your CV), I recommend getting <a href="https://www.comptia.org/certifications/network">CompTIA Network+</a> and then <a href="https://www.comptia.org/certifications/security">CompTIA Security+</a>. This will give you the fundamental knowledge and will show an employer that you understand how things piece together. 
 
@@ -125,7 +125,7 @@ Generally the only Udemy course I recommend are the ones by TheCyberMentor. They
 
 If you can afford it, then check out eLearnSecurity's PenTest Student (PTS) Course <a href="https://www.elearnsecurity.com/course/penetration_testing_student/">here</a>. This is a great way to go to get your first practical certification in hacking which will give you more of an edge on your CV. 
 
-If you have done all the above and PTS, then check out <a href="https://www.offensive-security.com/pwk-oscp/">OSCP by Offensive Security</a> and do that. It will be intense, but with persistance you will make it through. OSCP is the number 1 certification to have for your CV for pentesting. It will definitely get you a Junior pentest position. However, it is not necessary (I don't have it), so don't use it as an excuse to say that you need to spend a lot of money to become a pentester and you can't afford it. 
+If you have done all the above and PTS, then check out <a href="https://www.offensive-security.com/pwk-oscp/">OSCP by Offensive Security</a> and do that. It will be intense, but with persistance you will make it through. OSCP is the number 1 certification to have for your CV for pentesting. It will definitely increase your chances significantly for a Junior pentest position. However, it is not necessary (I don't have it), so don't use it as an excuse to say that you need to spend a lot of money to become a pentester and you can't afford it. 
 
 <h1>Books</h1>
 
@@ -167,7 +167,7 @@ I would also recommend working a lot on your CV, as that will be the first thing
 
 It's important to remember that if a pentester is reviewing your CV, then they won't have much time. Pentesting is a very busy job no matter where you work and they won't spend long looking at your CV. You need to make the important stuff easy to find and at the start to ensure that it gets through and is seen. 
 
-I would also recommend dedicating time to looking up CV advise online and working on it. This should be treated as if its your best piece of work. A report you are handing to a client for example. Reports are all pentesters have to show clients that they did something worth paying for, so they need to be damn good. Showing you can write clearly is very important. 
+I would also recommend dedicating time to looking up CV advise online and working on it. Looking at other people's CVs is good too! Do note that there are a lot of bad CVs so don't just blindly copy others. Looking at many of them you should start to see what the competition is like and take things you like from various people. This should be treated as if it's your best piece of work. A report you are handing to a client for example. Reports are all pentesters have to show clients that they did something worth paying for, so they need to be damn good. Showing you can write clearly is very important. 
 
 If you have done all of this then you should be in a really good place to get a job as a junior and shouldn't have much issue. It may take time to get your first job and that is ok. Once you have it you will be set for your career, just keep learning and growing. 
 
