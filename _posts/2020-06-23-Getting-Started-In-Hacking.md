@@ -18,7 +18,7 @@ I won't go into too much depth here, but I want to give you an idea of where I w
 
 Being a pentester is the first job I got out of University. At University I got my degree in Forensic Science, which was mostly chemistry, and then got my Masters in Forensic Chemistry. This involved nothing to do with hacking and did not contribute to my job. During my time at Uni, I spent many evenings and weekends suffering in hacking labs at home. I did various courses online and I even got my CEH qualification (which I regret very much, I do not recommend it at all! Way better to spend your money on other courses mentioned below). I also set up a blog to detail things I exploited, walkthroughs for challenges etc. It was all basic but useful. I spent a lot of time watching talks from DefCon and other conferences to learn more about the world of hacking and I spent a lot of time playing around with Vulnerable Virtual Machines on my own laptop. I also followed lots and lots of walkthroughs and also had a VIP HackTheBox membership so I could do retired machines with walkthroughs which helped a lot! 
 
-All the time spent was frustrating and confusing, but I remained curious and persistant, and after uni I managed to get a job as a junior Security Consultant and it was a set career from then onwards! I didn't know how to code, I had no formal training, I had no previous experience, I had no-one coaching me, I had no CVEs at the time etc. I hope this lets you know that it is possible, despite what some people and elitist pentesters may say! 
+All the time spent was frustrating and confusing, but I remained curious and persistent, and after uni I managed to get a job as a junior Security Consultant and it was a set career from then onwards! I didn't know how to code, I had no formal training, I had no previous experience, I had no-one coaching me, I had no CVEs at the time etc. I hope this lets you know that it is possible, despite what some people and elitist pentesters may say! 
 
 <h1>Myth Busting</h1>
 
@@ -37,7 +37,7 @@ Getting a job in cyber security will take a lot of effort and frustration. I wil
 
 The best place to start is to get familiar with the common toolset that you will see everyone using in walkthroughs. For hacking this is Kali Linux. It's not necessary, but knowing Kali will make it so much easier to follow guides which you will be doing for some time. This essentially is an Operating System (OS) that gives you all the tools you need. 
 
-To install Kali you will need to get a virualisation software. I recommend VirtualBox to start with as it is free and works really well. (On macs it may be a bit slow but at this point it's not worth paying for licenses just yet). So download and install VirtualBox, then install Kali Linux. There are several guides online on how to do this. 
+To install Kali you will need to get a virtualisation software. I recommend VirtualBox to start with as it is free and works really well. (On macs it may be a bit slow but at this point it's not worth paying for licenses just yet). So download and install VirtualBox, then install Kali Linux. There are several guides online on how to do this. 
 
 Now that kali is installed, you need to learn the basics of using a Linux OS. To do this I recommend playing the Bandit wargame here: 
 <a href="https://overthewire.org/wargames/bandit/">https://overthewire.org/wargames/bandit/</a>
@@ -53,7 +53,7 @@ So now you should have the toolkit and you should know the basics of navigating 
 
 Hacking can be broken down into some large fields such as Infrastructure (hacking machines), Web Application (hacking websites), Mobile (hacking mobile apps and systems), Cloud (hacking cloud systems and networks) etc. When starting out it's best not to spread yourself too thin. For most junior pentesting positions, they will be looking for basic Infrastructure and Web Application skills, although as Cloud is becoming so relevant, they will probably soon want the basics of that as well. 
 
-You can do these really in any order that interests you, but I think it is best to do both Web Applications and Infrasture at the same time. This way you can mix things up when things get a bit dry or you want a new challenge. 
+You can do these really in any order that interests you, but I think it is best to do both Web Applications and Infrastructure at the same time. This way you can mix things up when things get a bit dry or you want a new challenge. 
 
 <h2>Web Basics</h2>
 
@@ -82,7 +82,7 @@ Again keep good notes in your GitBook!! This is all invaluable knowledge that yo
 
 If you are aching for more web challenges then check out the web challenges on <a href="https://www.hackthissite.org">https://www.hackthissite.org</a>, <a href="https://www.enigmagroup.org">https://www.enigmagroup.org</a> and the web applications available on the Metasploitable 2 Virtual Machine.
 
-Another valuable resource is hackerones training environment, <a href="https://www.hacker101.com">https://www.hacker101.com</a>. This is meant to get you from zero to finding real world example bugs in applications and is a great way to see real world vulnerabilities and how they manifest in modern applicaitons.
+Another valuable resource is HackerOne's training environment, <a href="https://www.hacker101.com">https://www.hacker101.com</a>. This is meant to get you from zero to finding real world example bugs in applications and is a great way to see real world vulnerabilities and how they manifest in modern applications.
 
 <h2>Infrastructure Basics</h2>
 
@@ -90,7 +90,7 @@ When learning Infrastructure hacking, it can be hard to find good resources. Ess
 
 You should know the basics as you have installed Kali Linux. Downloading Vulnerable VMs is similar, however most will just be a case of downloaded and booting. Note: when doing this you should put your Kali and the target machine either in its own network, or both on Bridged Mode (In the networking settings of whatever virtualisation software you are using). 
 
-I recommend starting with <a href="https://metasploit.help.rapid7.com/docs/metasploitable-2">https://metasploit.help.rapid7.com/docs/metasploitable-2</a> as the first target machine. This machine is made to show a bunch of different attack paths using Metasploit, which is a hacking framework that can be used to automate lots of tasks. I would recommend also learning how to exploit things manually, as you won't be able to rely on Metasploit as a pentester alot of the time, but its a fine starting point. 
+I recommend starting with <a href="https://metasploit.help.rapid7.com/docs/metasploitable-2">https://metasploit.help.rapid7.com/docs/metasploitable-2</a> as the first target machine. This machine is made to show a bunch of different attack paths using Metasploit, which is a hacking framework that can be used to automate lots of tasks. I would recommend also learning how to exploit things manually, as you won't be able to rely on Metasploit as a pentester a lot of the time, but its a fine starting point. 
 
 There are several walkthroughs on different ways you can own Metasploitable 2 so I would follow those. Essentially everything on there is vulnerable to something and you should see how many different paths you can find onto the system. 
 
@@ -101,7 +101,7 @@ After you have done Metasploitable, there are a whole host of other machines to 
 
 Vulnhub is great for downloading and hacking VMs (called boot to roots typically). The goal is to get onto the target and then to gain administrative or root privileges on it. Usually this is proven by reading a file like `/root/flag.txt` for Linux or `C:\Users\Administrator\Desktop\flag.txt` for Windows. 
 
-Once you have done a selection of these, I recommend trying out some rooms on <a href="https://tryhackme.com/">https://tryhackme.com/</a>. This is a reletively new website on the scene, but for free you can try a bunch of rooms and learn a bunch of community uploaded stuff which is helpful.
+Once you have done a selection of these, I recommend trying out some rooms on <a href="https://tryhackme.com/">https://tryhackme.com/</a>. This is a relatively new website on the scene, but for free you can try a bunch of rooms and learn a bunch of community uploaded stuff which is helpful.
 
 If you really want a challenge then try <a href="https://www.hackthebox.eu">https://www.hackthebox.eu</a> (Note: the signup page is in itself a challenge, so if you are new and curious, you may need to look for a walkthrough. Hopefully you have done the above and have no issues with it! &#x1F609;) This is the best for vulnerable VMs in my opinion, however be warned, the active machines will be hard!! Generally for beginners I say to only do HackTheBox if you can first get the VIP membership. Get the VIP Membership for a year and then just work through all the retired machines and follow the videos for all of them made by Ippsec. By the time you have done all the retired machines you will have a great understanding of how it works and you will be in a great place to start doing active machines. 
 
@@ -117,7 +117,7 @@ Again I recommend following walkthroughs and taking notes.
 
 <h1>Courses</h1>
 
-So now if you have done all the above, you should be have a pretty good grasp on the basics across the board for the general skills needed as a junior pentester. However, what you wont have is the fundemental knowledge of computers and networking. 
+So now if you have done all the above, you should be have a pretty good grasp on the basics across the board for the general skills needed as a junior pentester. However, what you wont have is the fundamental knowledge of computers and networking. 
 
 For understanding the fundamentals (and showing it on your CV), I recommend getting <a href="https://www.comptia.org/certifications/network">CompTIA Network+</a> and then <a href="https://www.comptia.org/certifications/security">CompTIA Security+</a>. This will give you the fundamental knowledge and will show an employer that you understand how things piece together. 
 
@@ -161,7 +161,7 @@ At this point you should have a good direction on where to go to get the skills 
 
 I heavily recommend a blog. You can host a blog for free like this one on GitPages. It doesn't have to be fancy, but it does have to look professional and have a decent format. On the blog upload walkthroughs of challenges you have solved, upload tutorials on different basic techniques, upload things that you got stuck on and solved for the next beginner. 
 
-It doesn't matter abour traffic you get or anything, it's just something the employer can look at to see what you know, how you write, how well you can explain the concepts and how well you know it. 
+It doesn't matter about traffic you get or anything, it's just something the employer can look at to see what you know, how you write, how well you can explain the concepts and how well you know it. 
 
 I would also recommend working a lot on your CV, as that will be the first thing employers see. You want to show them that you have passion for it and that you have done all this in your free time. They will appreciate that if they are technical. This combined with a blog to show off skills and you should be in a good place. I don't want to go into a lot of depth on CVs as I am certainly not a pro on it, but I would recommend putting the things you really want them to focus on (such as home labs and things you have done in free time) at the top of the CV. All the other stuff that is irrelevant should either not be there or at the bottom. 
 
