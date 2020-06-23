@@ -1,14 +1,14 @@
 ---
 layout: single
 classes: wide
-title: "Getting Started In Hacking - From Beginner to Junior Pentester"
+title: "Getting Started With Hacking - From Beginner to Junior Pentester"
 excerpt: "A guide on how to go from no experience to getting your first job within the offensive security field."
 categories: 
   - Career
 ---
 <h1>Why Make This?</h1>
 
-Lots of people have asked me lately on LinkedIn about how to get started with hacking. It's an interesting field with a lot of interesting topics and diversity, making it very attractive for people that like to learn and have constant challenge (also the money is damn good too). When starting out, it is extremely daunting. There are so many courses and books and different people giving different advise and it is all confusing. I wanted to make this post to give my opinion on how you can go from zero experience to getting a junior job in cybersecurity. 
+Lots of people have asked me lately on LinkedIn about how to get started with hacking. It's an interesting field with a lot of interesting topics and diversity, making it very attractive for people that like to learn and have constant challenge (also the money is a plus). When starting out, it is extremely daunting. There are so many courses and books and different people giving different advise and it is all confusing. I wanted to make this post to give my opinion on how you can go from zero experience to getting a junior job in cybersecurity. 
 
 At the bottom of this post I have put links for all the resources mentioned here. 
 
