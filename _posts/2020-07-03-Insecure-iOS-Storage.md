@@ -88,7 +88,7 @@ If we look at `WebKit` we can go into `NetworkCache > Version 16 > Records > GUI
 
 The GUID will likely change between devices, but may correlate to DVIA-v2. I am unsure on that. 
 
-You should see several files though. If we click on some of them and open them in the text editor, then hit the `Hex View` button at the top, we can see clearly that what we are seeing is cached web responses for pages that I have never visited and have been stored through the App. 
+You should see several files though. If we click on some of them and open them in the text editor, then hit the `Hex View` button at the top, we can see clearly that what we are seeing is cached web responses for pages that I have never visited and has been stored through the App. 
 
 <p align="center"><a href="/images/iOS1-9.png"><img src="/images/iOS1-9.png"></a></p>
 
