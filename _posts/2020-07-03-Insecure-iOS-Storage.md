@@ -40,7 +40,7 @@ We are within the app sandbox with Grapefruit, so lets click on the finder icon 
 
 Clicking on Documents and then opening the `userInfo.plist` file shows us our string! 
 
-<p align="center"><a href="/images/iOS1-3.png"><img src="/images/iOS1-4.png"></a></p>
+<p align="center"><a href="/images/iOS1-3.png"><img src="/images/iOS1-3.png"></a></p>
 
 <h1>UserDefaults</h1>
 
