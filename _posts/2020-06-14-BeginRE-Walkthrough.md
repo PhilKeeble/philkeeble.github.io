@@ -80,13 +80,13 @@ We can see in the C code to the right what is happening very clearly, however gi
 
 Lets go into it a bit! 
 
-```
+```nasm
 00401043 83 7d 08 02     CMP        dword ptr [EBP + param_1],0x2     
 ```
 
 This instruction compares the strings given on the command line with 2. The executable itself will always be the first parameter. The fact we see 2 here means it's expecting something like `Good_luck.exe password` on the command line. 
 
-```
+```nasm
 00401047 75 3b           JNZ        LAB_00401084                                     if no second arg then jumps away
 ```
 
