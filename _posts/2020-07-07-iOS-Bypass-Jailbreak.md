@@ -51,7 +51,7 @@ Started tracing 7 functions. Press Ctrl+C to stop.
 Process terminated
 ```
 
-Each function is called as we click on the button. So we can see when we click on the Test 1 button the first function (_T07DVIA_v232JailbreakDetectionViewControllerC20jailbreakTest1TappedyypF) is called. This is a Swift function and we can tell that by the _T at the start. If this was an Objective-C function then we could hook it with Objection. We can't do the same with Swift though.
+Each function is called as we click on the button. So we can see when we click on the Test 1 button the first function (_T07DVIA_v232...jailbreakTest1TappedyypF) is called. This is a Swift function and we can tell that by the _T at the start. If this was an Objective-C function then we could hook it with Objection. We can't do the same with Swift though.
 
 We can also see that Test 3 has two functions. It has the one for it being tapped like all the others, then it has one that has `jailbreakTest3` in it, so we can assume that is where the main bulk of the Test will be done. 
 
