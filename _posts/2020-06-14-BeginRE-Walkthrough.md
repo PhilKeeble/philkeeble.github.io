@@ -92,7 +92,7 @@ This instruction compares the strings given on the command line with 2. The exec
 
 This is a Jump if not zero command (JNZ). The compare instruction from above makes sure there is 2 arguments. If there are not 2 arguments, then the result will be a 1 as they were different. In this instruction it will see the 1 (failure) and jump as it is not zero. This jump takes the user past the main function and onto a new section that cleans up memory and exits. If 2 parameters are given then this will not jump and execution will continue.
 
-```
+```nasm
 00401049 8b 45 0c        MOV        EAX,dword ptr [EBP + param_2]                    moves pointer to param 2
 0040104c ff 70 04        PUSH       dword ptr [EAX + 0x4]                            push to stack
 0040104f ff 15 40        CALL       dword ptr [->API-MS-WIN-CRT-CONVERT-L1-1-0.DLL   convert to int
@@ -103,7 +103,7 @@ This section seems to move a pointer to the second parameter, then pushes the se
 
 Then a Windows API call is made. If you hover over it the following can be seen `PTR_atoi_00402040`. Looking up what atoi does in C and we can see that its a library that takes a string and converts it to an integer. So the second parameter is taken, moved to EAX, then converted to an integer. 
 
-```
+```nasm
 00401055 83 c4 04        ADD        ESP,0x4                                          pushes int to value
 00401058 85 c0           TEST       EAX,EAX                                          ensures it was successful
 0040105a 74 28           JZ         LAB_00401084                                     if no int, jumps
@@ -111,7 +111,7 @@ Then a Windows API call is made. If you hover over it the following can be seen 
 
 This function adds the new integer value to EAX and adds 4, I assume to give it space to reside within. It then tests that EAX has a value within it. If the result is 0 (no result) then a jump happens to bypass the main function and close. (JZ = Jump if Zero). If an integer value is now within EAX, it will continue. 
 
-```
+```nasm
 0040105c 8d 04 80        LEA        EAX,[EAX + EAX*0x4]                              push and put 5x EAX -> EAX
 0040105f 3d 1a 18        CMP        EAX,0x181a                                       compares to 0x181A
             00 00
@@ -139,7 +139,7 @@ This function is a lot larger than the other two. I renamed the function to main
 
 The first section of main is:
 
-``` 
+```nasm
 00401040 55              PUSH       EBP
 00401041 8b ec           MOV        EBP,ESP
 00401043 83 ec 08        SUB        ESP,0x8
@@ -159,7 +159,7 @@ I have renamed the functions printfunction and error code, so they will look dif
 
 If a second parameter is found then the CMP returns 0, then the jump is taken and goes to the next section.
 
-```
+```nasm
 00401063 b8 04 00        MOV        EAX,0x4                                          add 4 to eax
             00 00
 00401068 c1 e0 00        SHL        EAX,0x0                                          shift left 0 (does nothing)
@@ -190,7 +190,7 @@ Then it takes the length of the string and puts the length into EAX. It then inc
 
 Then the value of EAX is moved into memory in `dest`. This is another thing I have renamed for ease. A CMP instruction is done to make sure that dest contains the length of the string. If it does not contain it then it doesn't jump and it errors and closes. If it contains the length then it moves onto the next section. 
 
-```
+```nasm
 0040109f b9 04 00        MOV        ECX,0x4
             00 00
 004010a4 c1 e1 00        SHL        ECX,0x0
@@ -221,7 +221,7 @@ Then the value of EAX is moved into memory in `dest`. This is another thing I ha
 
 Here 4 is moved to ECX, its then shifted left (SHL) by 0 (doing nothing). Its then taking the second parameter and putting it into EDX, then putting into EAX. It then seems to call strcpy function so I assume it copying the actual string into EAX. Then checking that EAX contains something and if not continues without jumping and fails. If something is in EAX it takes the jump to the next section. So at this point we have the length of the string in memory and the actual string itself.
 
-```
+```nasm
                         LAB_004010de                                    XREF[1]:     004010bc(j)  
 004010de eb 09           JMP        LAB_004010e9                                     avoids increment first time
                         LAB_004010e0                                    XREF[1]:     00401107(j)  
@@ -252,7 +252,7 @@ Section LAB_004010e9 moves a pointer to our string in memory, points to a single
 
 So we know the program is taking our string, getting the length of it, putting it into memory, looking at it byte by byte and replacing them with some result from mystery_function. So lets take a look at mystery_function.
 
-```
+```nasm
 00401160 55              PUSH       EBP
 00401161 8b ec           MOV        EBP,ESP
 00401163 0f be 45 08     MOVSX      EAX,byte ptr [EBP + current_char]                takes current character
@@ -289,7 +289,7 @@ At the end it returns to main.
 
 So now we know that the string is being taken and each letter of the string is being moved by 4 and then replaced, making this a caeser cipher!
 
-```
+```nasm
 00401109 8b 45 fc        MOV        EAX,dword ptr [EBP + dest]                       all chars + 4 now 
 0040110c 2b 45 f8        SUB        EAX,dword ptr [EBP + input_length]               subs length to get back to first
 0040110f 89 45 fc        MOV        dword ptr [EBP + dest],EAX
@@ -335,7 +335,7 @@ So we need to have a random function that decides where mines are placed before 
 * Right click on rand and use References > Show references to rand, follow the function in the popup box and you should see a function (rename it to rand_caller)
 * View the references for rand_caller (you should see 2) and you should end up in the following loop
 
-```
+```nasm
 010036c7 ff 35 34        PUSH       dword ptr [DAT_01005334]                         value pushed to stack
          53 00 01
 010036cd e8 6e 02        CALL       rand_caller                                      int rand_caller(int param_1)
