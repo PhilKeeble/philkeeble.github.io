@@ -642,6 +642,85 @@ frida -U -l DVIA2bypassjailbreak5.js DVIA-v2
 
 Then go into the application and click on the Test 5 button and you will see the success message! We have now bypassed all of the checks! 
 
+<h1>The Ultimate DVIA-v2 Jailbreak Bypass</h1>
+
+If we take all the methods from before, we can combine them into one file and then run that through Frida to bypass all 5 levels with one script! This could be useful to know if there were several checks that we needed to individually bypass prior to the application running. 
+
+For this to work we needed to convert our method for Test 2 into one that matches the others. It follows the same process and I advise you do it yourself and check with the below to make sure you are correct. 
+
+```javascript
+var targetModule = 'DVIA-v2';
+var addr = ptr(0x192c64);
+var moduleBase = Module.getBaseAddress(targetModule);
+var targetAddress = moduleBase.add(addr);
+   Interceptor.attach(targetAddress, {
+        onEnter: function(args) {
+                if(this.context.x0 == 0x01){
+                    this.context.x0=0x00
+                    console.log("Bypass Test1");
+            }
+        },
+    });
+
+var addr = ptr(0x192d80);
+var moduleBase = Module.getBaseAddress(targetModule);
+var targetAddress = moduleBase.add(addr);
+   Interceptor.attach(targetAddress, {
+        onEnter: function(args) {
+                if(this.context.x0 == 0x01){
+                    this.context.x0=0x00
+                    console.log("Bypass Test2");
+            }
+        },
+    });
+
+var addr = ptr(0x1959d8);
+var moduleBase = Module.getBaseAddress(targetModule);
+var targetAddress = moduleBase.add(addr);
+   Interceptor.attach(targetAddress, {
+        onEnter: function(args) {
+                if(this.context.x8 == 0x01){
+                    this.context.x8=0x00
+                    console.log("Bypass Test3");
+            }
+        },
+    });
+
+var addr = ptr(0x1936e0);
+var moduleBase = Module.getBaseAddress(targetModule);
+var targetAddress = moduleBase.add(addr);
+   Interceptor.attach(targetAddress, {
+        onEnter: function(args) {
+                if(this.context.x8 == 0x01){
+                    this.context.x8=0x00
+                    console.log("Bypass Test4");
+            }
+        },
+    });
+
+var addr = ptr(0x197028);
+var moduleBase = Module.getBaseAddress(targetModule);
+var targetAddress = moduleBase.add(addr);
+   Interceptor.attach(targetAddress, {
+        onEnter: function(args) {
+                if(this.context.x8 == 0x01){
+                    this.context.x8=0x00
+                    console.log("Bypass Test5");
+            }
+        },
+    });
+```
+
+Note that the code is the same for them all, but the variable for the application name is only set once as it is not needed for all of them. 
+
+Load this file into frida (I saved the file as DVIA2bypassjailbreakall.js).
+
+```
+frida -U -l DVIA2bypassjailbreakall.js DVIA-v2 
+```
+
+Now in the iOS application run all 5 jailbreak tests and they should all succeed!! We can now say we have definitely bypassed jailbreak detection in DVIAv2! 
+
 <h1>Limitations</h1>
 
 Whilst this method does work for the Swift methods and seems to be the best out there for hooking swift values, there are some limitations. In code that is heavily obfuscated or complex it could be very difficult to find the instructions reliable. 
