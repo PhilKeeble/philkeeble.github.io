@@ -127,7 +127,7 @@ image dump sections DVIA-v2
 
 <p align="center"><a href="/images/iOS3-2.png"><img src="/images/iOS3-2.png"></a></p>
 
-Now we can calculate the offset by subtracting the value in the box at the top by the value in the box below it. The places of these will be the same.
+Now we can calculate the offset by subtracting the value in the box at the bottom by the value in the box above it. The places of these will be the same.
 
 ```
 0x00000001002f4000 - 0000000100000000 = 0x2f4000
