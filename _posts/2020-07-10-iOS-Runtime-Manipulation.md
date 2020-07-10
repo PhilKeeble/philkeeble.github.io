@@ -166,7 +166,7 @@ register read
 
 Given that we want to reverse the logic of the jump instruction, we need to look at the x0 register, as it compares x0 to 0x0 and if it is 0x0 then it will take the jump and send us to the failed message.
 
-```arm
+```
 0x10484d314 <+1592>: tbz    w0, #0x0, 0x10484d3d0
 ```
 
@@ -216,22 +216,22 @@ I will likely come back to this to create some Frida script to do it. For now I 
 
 We know where the function is in Ghidra. So let's show it in LLDB.
 
-```arm
-dis -s 0x4690000+0x00000001001bded4
+```
+dis -s 0x2f4000+0x00000001001bded4
 ```
 
 <p align="center"><a href="/images/iOS3-11.png"><img src="/images/iOS3-11.png"></a></p>
 
 This is the jump that will ultimately determine if we were successful or not. We can see that it is similar to Method 1, and we can see that the register x8 is being compared to 0x0. If it is 0x0 it will jump and fail us, if it's not 0x0 then we will succeed.
 
-```arm
-0x10484ded4 <+2412>: tbz    w8, #0x0, 0x10484df94
+```
+0x1004b1ed4 <+2412>: tbz    w8, #0x0, 0x1004b1f94
 ```
 
 Lets set the breakpoint.
 
 ```
-breakpoint set -a 0x10484ded4
+breakpoint set -a 0x1004b1ed4
 ```
 
 <p align="center"><a href="/images/iOS3-12.png"><img src="/images/iOS3-12.png"></a></p>
@@ -278,7 +278,7 @@ If you enter any 4 digits and press the `Validate code` button you will likely s
 
 Let's take a look at this function in Ghidra. To find it I searched for the string we are given when we fail. I then found references to this string and worked backwards from there. By seeing which jumps are taken etc, we end up at this snippet.
 
-```arm
+```
 10015e3d8 08 52 84 d2     mov        x8,#0x2290
 10015e3dc a9 83 5e f8     ldur       x9,[x29, #local_28]
 10015e3e0 3f 01 08 eb     cmp        x9,x8 
