@@ -5,7 +5,6 @@ title: "Bypassing Biometrics - DVIAv2 Part 5"
 excerpt: "A guide on how to manipulate iOS applications to bypass biometric authentication."
 categories: 
   - iOS
-  - Reverse-Engineering
 ---
 <h1>Intro</h1>
 
