@@ -21,12 +21,10 @@ Open up BurpSuite on your computer and choose the default options. When it is la
 Now stay under the `Proxy` tab and go to the `Options` tab located under it. You should see the below:
 
 <p align="center"><a href="/images/iOS7-1.png"><img src="/images/iOS7-1.png"></a></p>
-<img>
 
 Now click on the `Add` button for a Proxy Listener. Add in the port `8081` and click on the button for it to be `All interfaces`, like below:
 
 <p align="center"><a href="/images/iOS7-2.png"><img src="/images/iOS7-2.png"></a></p>
-<img>
 
 Click on `OK`. It will give you an error since you are listening to remote connections. Click `OK` again and you should see the listener has been added. 
 
@@ -37,7 +35,6 @@ All being well you should now be intercepting traffic.
 Go back into DVIA-v2 and enter some details in on the input fields for the `Network Layer Security` view. Now click `Send over HTTP`. You should see the below in Burp.
 
 <p align="center"><a href="/images/iOS7-3.png"><img src="/images/iOS7-3.png"></a></p>
-<img>
 
 This will contain the data you just entered! 
 
@@ -54,7 +51,6 @@ Now go back into DVIA-v2 and click on the `Send over HTTPS` button.
 You should see the below in Burp:
 
 <p align="center"><a href="/images/iOS7-4.png"><img src="/images/iOS7-4.png"></a></p>
-<img>
 
 Note that the host is now `https://example.com` rather than `http://example.com` but we can still see the data. It is essentially encrypting it to us and then Burp is encrypting it to the server, completing the MitM scenario. 
 
@@ -81,7 +77,6 @@ ios sslpinning disable
 This hooks the low level functions that check the certificates and returns that they are true. Now if we click on either the `Send using certificate pinning` or the `send using public key pinning` it will not popup at all. But in Burp we will see the requests! 
 
 <p align="center"><a href="/images/iOS7-5.png"><img src="/images/iOS7-5.png"></a></p>
-<img>
 
 Both of these requests look the same and are GET requests. This means they do not include POST data from the application, so we cannot see the sensitive data. 
 
